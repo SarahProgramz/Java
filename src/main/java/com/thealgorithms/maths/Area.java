@@ -232,4 +232,15 @@ public final class Area {
         }
         return Math.PI * radius * (radius + Math.pow(height * height + radius * radius, 0.5));
     }
+    public static double surfaceAreaPyramid(final double sideLength, final double slantHeight) {
+if (sideLength <= 0) {
+throw new IllegalArgumentException("Must be a positive sideLength");
+}
+if (slantHeight <= 0) {
+throw new IllegalArgumentException("Must be a positive slantHeight");
+}
+double baseArea = sideLength * sideLength;
+double lateralSurfaceArea = 2 * sideLength * slantHeight;
+return baseArea + lateralSurfaceArea;
+    }
 }
